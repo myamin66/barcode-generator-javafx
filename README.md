@@ -10,8 +10,8 @@ When using the Point of Sale software, after adding a new product
 
 Project was made using the following technologies:
 
-Java
-JavaFX
-CSS
-Scene Builder
-JDBC
+ Java
+ JavaFX
+ CSS
+ Scene Builder
+ JDBC
