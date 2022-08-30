@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.i2p.barcodeusingjavafx.BarcodeController">
+   <top>
+      <Pane prefHeight="106.0" prefWidth="600.0" style="-fx-background-color: #98A5EB;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="69.0" layoutY="44.0" prefHeight="38.0" prefWidth="557.0" text="WELCOME TO THE BARCODE GENERATOR" textAlignment="CENTER" textFill="#f8f0f0">
+               <font>
+                  <Font name="Tahoma Bold" size="26.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#e13b3b" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+            <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="14.0" layoutY="41.0">
+               <image>
+                  <Image url="@barcode_100px.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="215.0" prefWidth="438.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="48.0" text="Select Category">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="categorycombo" layoutX="41.0" layoutY="30.0" onAction="#setProducts" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #98A5EB; -fx-alignment: center;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></ComboBox>
+            <ComboBox fx:id="productcombo" layoutX="238.0" layoutY="30.0" onAction="#showReference" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #98A5EB; -fx-alignment: center;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></ComboBox>
+            <Label layoutX="250.0" text="Select Product">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="39.0" layoutX="191.0" layoutY="31.0">
+               <image>
+                  <Image url="@product_documents_64px.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="14.0" layoutY="33.0">
+               <image>
+                  <Image url="@sorting_30px.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <TextField fx:id="reference" editable="false" layoutX="400.0" layoutY="30.0" promptText="Reference Number">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor></TextField>
+            <Label fx:id="rows" layoutX="571.0" layoutY="28.0" prefHeight="25.0" prefWidth="34.0" text="Rows" textFill="#235bf5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Spinner fx:id="rowspinner" layoutX="616.0" layoutY="30.0" onMouseClicked="#checkrowspinner" prefHeight="25.0" prefWidth="55.0">
+               <valueFactory>
+                  <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="1" />
+               </valueFactory>
+            </Spinner>
+            <Label layoutX="704.0" layoutY="28.0" prefHeight="25.0" prefWidth="56.0" text="Columns" textFill="#235bf5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Spinner fx:id="colsspinner" layoutX="765.0" layoutY="30.0" onMouseClicked="#checkrowspinner" prefHeight="25.0" prefWidth="55.0">
+               <valueFactory>
+                  <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="1" />
+               </valueFactory>
+            </Spinner>
+            <ImageView fx:id="imgplace" fitHeight="170.0" fitWidth="500.0" layoutX="125.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DisplacementMap>
+                     <mapData>
+                        <FloatMap />
+                     </mapData>
+                  </DisplacementMap>
+               </effect></ImageView>
+            <ImageView layoutX="909.0" layoutY="23.0" onMousePressed="#printbyimage">
+               <image>
+                  <Image url="@printer.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
